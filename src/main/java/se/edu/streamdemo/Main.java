@@ -47,4 +47,19 @@ public class Main {
         }
     }
 
+    public static void printDeadlinesUsingStreams(ArrayList<Task> tasks) {
+        System.out.println("Using Streams");
+        tasks.stream()
+                .filter(t -> t instanceof Deadline)
+                .sorted((t1, t2) -> t1.getDescription().compareToIgnoreCase(t2.getDescription()))
+                .forEach(System.out::println);
+    }
+
+    public static ArrayList<Task> filterTasksByString(ArrayList<Task> tasks, String filterString) {
+        ArrayList<Task> filteredList= (ArrayList<Task>) tasks.stream()
+                .filter(t -> t.getDescription().contains(filterString))
+                .collect(toList());
+        return filteredList;
+    }
+
 }
