@@ -6,6 +6,8 @@ import se.edu.streamdemo.task.Task;
 
 import java.util.ArrayList;
 
+import static java.util.stream.Collectors.toList;
+
 public class Main {
 
     public static void main(String[] args) {
