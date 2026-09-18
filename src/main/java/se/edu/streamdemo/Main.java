@@ -18,8 +18,11 @@ public class Main {
 
         System.out.println("Printing deadlines ...");
         printDeadlines(tasksData);
-
+        printDeadlinesUsingStreams(tasksData);
         System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
+
+        ArrayList<Task> filteredList = filterTasksByString(tasksData, "10");
+        printAllData(filteredList);
 
     }
 
